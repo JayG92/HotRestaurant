@@ -18,7 +18,11 @@ let people = [];
 
 //  Routes that sends the user first to the AJAX homepage //
 app.get("/", function(req, res){
+<<<<<<< HEAD
     res.sendFile(path.join(__dirname, ".../html/index.html"))
+=======
+    res.sendFile(path.join(__dirname, "../html/index.html"))
+>>>>>>> f499c34adf7dfd76adcacfc870242d996e6a9bea
 });
 //  Route to View Tables page //
 app.get("/tables", function(req, res){
@@ -31,10 +35,15 @@ app.get("/reserve", function(req, res){
 app.post("/api/people", function(request, response){
     let newPeople = req.body;
     console.log(newPeople);
+<<<<<<< HEAD
     people.push(newPeople);
     res.json(newPeople);
 // ========================================================================
 // Adds new people to reservation //
+=======
+    // people.push(newPeople);
+    res.json(newPeople);
+>>>>>>> f499c34adf7dfd76adcacfc870242d996e6a9bea
 })
 
 app.listen(PORT, function(){
