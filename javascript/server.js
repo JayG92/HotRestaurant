@@ -18,24 +18,24 @@ let people = [];
 
 //  Routes that sends the user first to the AJAX homepage //
 app.get("/", function(req, res){
-    res.sendFile(path.join(__dirname, "index.html"))
+    res.sendFile(path.join(__dirname, ".../html/index.html"))
 });
 //  Route to View Tables page //
 app.get("/tables", function(req, res){
-    res.sendFile(path.join(__dirname, "viewtables.html"))
+    res.sendFile(path.join(__dirname, "../html/viewtables.html"))
 });
 //  Route to Make a Reservation page //
 app.get("/reserve", function(req, res){
-    res.sendFile(path.join(__dirname, "reservation.html"))
+    res.sendFile(path.join(__dirname, "../html/reservation.html"))
 });
-// ========================================================================
-// Adds new people to reservation //
 app.post("/api/people", function(request, response){
     let newPeople = req.body;
+    console.log(newPeople);
+    people.push(newPeople);
+    res.json(newPeople);
+// ========================================================================
+// Adds new people to reservation //
 })
-console.log(newPeople);
-people.push(newPeople);
-res.json(newPeople);
 
 app.listen(PORT, function(){
     console.log("App is tuned in on PORT" + PORT);
